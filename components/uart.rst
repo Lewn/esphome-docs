@@ -76,9 +76,10 @@ used for hardware sharing change accordingly.
 
 The ESP32 has three UARTs. Any pair of GPIO pins can be used, as long as they support the proper output/input modes.
 
-The ESP8266 has two UARTs; the second of which is TX-only. Only a limited set of pins can be used. ``UART0`` may
-use either ``tx_pin: GPIO1`` and ``rx_pin: GPIO3``, or ``tx_pin: GPIO15`` and ``rx_pin: GPIO13``. ``UART1`` must
-use ``tx_pin: GPIO2``. Any other combination of pins will result in use of a software UART.
+The ESP8266 has two UARTs; the second of which is usualy TX-only, as the GPIO8 pin is almost always used for flash.
+Only a limited set of pins can be used. ``UART0`` may use either ``tx_pin: GPIO1`` and ``rx_pin: GPIO3``, or
+``tx_pin: GPIO15`` and ``rx_pin: GPIO13``. ``UART1`` must use ``tx_pin: GPIO2`` and ``rx_pin: GPIO8``. Any other
+combination of pins will result in use of a software UART.
 
 .. _uart-write_action:
 
